@@ -1,19 +1,27 @@
 name: Update jobs
+
 on:
   schedule:
-    - cron: '0 6 * * 1-5' # 07:00 Swedish/Danish winter time, 08:00 summer time
+    - cron: '0 * * * *'
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python refresh.py
+
+      - name: Refresh job listings
+        run: python refresh.py
+
       - name: Commit refreshed data
         run: |
           git config user.name 'github-actions[bot]'
