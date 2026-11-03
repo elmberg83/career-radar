@@ -42,21 +42,30 @@ def main():
    j.pop('description',None)
    unique[j['id']]=j
  output = {
-    'updated_at': NOW.isoformat(),
-    'jobs': sorted(
-        unique.values(),
-        key=lambda j: (j['date'], j['score']),
-        reverse=True
-    )[:250],
-    'sources': ['Arbeitnow', 'Remotive'],
-    'errors': errors,
-    'note': 'Betyg är heuristiska och preliminära; annonser och tillgänglighet måste kontrolleras hos arbetsgivaren.'
-}
+        'updated_at': NOW.isoformat(),
+        'jobs': sorted(
+            unique.values(),
+            key=lambda j: (j['date'], j['score']),
+            reverse=True
+        )[:250],
+        'sources': ['Arbeitnow', 'Remotive'],
+        'errors': errors,
+        'note': 'Betyg är heuristiska och preliminära; annonser och tillgänglighet måste kontrolleras hos arbetsgivaren.'
+    }
 
-target = ROOT / 'data/jobs.json'
-target.parent.mkdir(parents=True, exist_ok=True)
- if errors and not jobs and target.exists():
-  print('All feeds failed; preserving last successful data:',errors);return
- target.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
- print('Saved',len(output['jobs']),'jobs',errors)
-if __name__=='__main__':main()
+    target = ROOT / 'data/jobs.json'
+    target.parent.mkdir(parents=True, exist_ok=True)
+
+    if errors and not jobs and target.exists():
+        print('All feeds failed; preserving last successful data:', errors)
+        return
+
+    target.write_text(
+        json.dumps(output, ensure_ascii=False, indent=2) + '\n',
+        encoding='utf-8'
+    )
+    print('Saved', len(output['jobs']), 'jobs', errors)
+
+
+if __name__ == '__main__':
+    main()
