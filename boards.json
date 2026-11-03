@@ -1,0 +1,13 @@
+{
+  "greenhouse": [
+    {"company": "Pleo", "token": "pleo"},
+    {"company": "Lunar", "token": "lunar"},
+    {"company": "Trustpilot", "token": "trustpilot"},
+    {"company": "Monta", "token": "monta"},
+    {"company": "Veo", "token": "veo"},
+    {"company": "Too Good To Go", "token": "toogoodtogo"}
+  ],
+  "lever": [
+    {"company": "Unity", "token": "unity"}
+  ]
+}
