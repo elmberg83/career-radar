@@ -20,7 +20,9 @@ jobs:
           python-version: '3.12'
 
       - name: Refresh job listings
-        run: python refresh.py
+        run: |
+          mkdir -p data
+          python refresh.py
 
       - name: Commit refreshed data
         run: |
