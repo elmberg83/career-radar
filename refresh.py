@@ -1,112 +1,200 @@
+"""Career Radar: public job feeds and configurable employer ATS boards.
+No third-party packages, credentials or scraping required.
+"""
+import datetime as dt
+import html
 import json
 import re
+import urllib.error
 import urllib.request
-import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-NOW = datetime.datetime.now(datetime.timezone.utc)
-KEYWORDS = ['account manager', 'account director', 'customer success', 'business development', 'commercial manager', 'commercial director', 'sales director', 'head of sales', 'vp sales', 'partnership', 'client relationship', 'customer engagement', 'regional sales', 'key account', 'sales manager']
-PREFERRED = ['maritime', 'shipping', 'marine', 'energy', 'sustainability', 'industrial', 'saas', 'technology', 'decarbon', 'logistics']
-PLACES = ['denmark', 'copenhagen', 'københavn', 'hellerup', 'lyngby', 'sjælland', 'zealand', 'sweden', 'malmö', 'malmo', 'lund', 'skåne', 'skane', 'remote', 'europe', 'emea', 'worldwide']
+NOW = dt.datetime.now(dt.timezone.utc)
+TARGET = ROOT / 'data' / 'jobs.json'
+HEADERS = {'User-Agent': 'CareerRadar/2.0 (personal job listing reader)', 'Accept': 'application/json'}
+TITLES = ('key account', 'account manager', 'account director', 'strategic account',
+          'customer success', 'customer engagement', 'client relationship',
+          'business development', 'commercial manager', 'commercial director',
+          'commercial lead', 'head of commercial', 'sales director', 'head of sales',
+          'vp sales', 'vice president sales', 'sales manager', 'partnership',
+          'revenue director', 'enterprise account', 'regional director', 'country manager')
+LOCAL = ('copenhagen', 'københavn', 'kobenhavn', 'hellerup', 'lyngby', 'gentofte',
+         'ballerup', 'glostrup', 'frederiksberg', 'ørestad', 'oresund', 'sjælland',
+         'zealand', 'denmark', 'danmark', 'malmö', 'malmo', 'lund', 'skåne',
+         'skane', 'helsingborg', 'sweden', 'sverige')
+REMOTE = ('remote', 'europe', 'emea', 'eu only', 'eu/uk', 'worldwide', 'anywhere')
+SECTORS = ('maritime', 'shipping', 'marine', 'energy', 'sustainab', 'industrial',
+           'saas', 'technology', 'decarbon', 'logistics', 'cleantech')
 
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'CareerRadar/1.0 (public job feed reader)'})
-    with urllib.request.urlopen(req, timeout=25) as response:
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=22) as response:
         return json.load(response)
 
 
-def strip(value):
-    return re.sub(r'<[^>]+>', ' ', value or '').replace('&amp;', '&').strip()
+def clean(value):
+    return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]*>', ' ', str(value or '')))).strip()
 
 
-def score(job):
+def date(value):
+    if isinstance(value, (int, float)):
+        return dt.datetime.fromtimestamp(value / (1000 if value > 1e11 else 1), dt.timezone.utc).date().isoformat()
+    match = re.match(r'\d{4}-\d{2}-\d{2}', str(value or ''))
+    return match.group() if match else NOW.date().isoformat()
+
+
+def relevant(job):
     title = job['title'].lower()
-    body = (job['description'] + ' ' + job['company']).lower()
-    location = job['location'].lower()
-    value = 5.0
-    if any(term in title for term in ['customer success', 'strategic account', 'key account', 'account director', 'commercial manager', 'commercial director', 'partnership']):
-        value += 2.1
-    elif any(term in title for term in ['business development', 'head of sales', 'sales director', 'vp sales']):
-        value += 1.5
+    loc = job['location'].lower()
+    if not any(word in title for word in TITLES):
+        return False
+    # A country-wide job feed should not be mistaken for an eligible local role.
+    # Include local openings, EU/EMEA remote roles, and unspecified locations from
+    # configured employer boards (these get a lower geography score).
+    if any(word in loc for word in LOCAL):
+        return True
+    if any(word in loc for word in REMOTE):
+        return not any(word in loc for word in ('united states only', 'us only', 'canada only', 'latam only'))
+    return job['source'].startswith(('Greenhouse', 'Lever')) and not loc
+
+
+def rating(job):
+    title = job['title'].lower()
+    body = (job.get('description', '') + ' ' + job['company']).lower()
+    loc = job['location'].lower()
+    result = 5.0
+    if any(t in title for t in ('customer success', 'strategic account', 'key account', 'account director', 'commercial manager', 'commercial director', 'partnership')):
+        result += 1.8
+    elif any(t in title for t in ('business development', 'head of sales', 'sales director', 'vp sales')):
+        result += 1.4
     else:
-        value += 0.8
-    if any(term in body for term in PREFERRED):
-        value += 1.0
-    if any(term in location for term in ['copenhagen', 'denmark', 'malmö', 'malmo', 'lund', 'sweden']):
-        value += 0.7
-    if 'remote' in location:
-        value += 0.3
-    if any(term in body for term in ['cold calling', 'door-to-door', 'commission only']):
-        value -= 1.0
-    return round(min(10, max(1, value)), 1)
+        result += 0.7
+    if any(t in body for t in SECTORS):
+        result += 0.8
+    if any(t in loc for t in ('copenhagen', 'københavn', 'hellerup', 'malmö', 'malmo', 'lund')):
+        result += 1.4
+    elif any(t in loc for t in LOCAL):
+        result += 1.0
+    elif any(t in loc for t in REMOTE):
+        result += 0.3
+    if any(t in body for t in ('cold calling', 'door-to-door', 'commission only')):
+        result -= 1.0
+    return round(max(1, min(10, result)), 1)
 
 
-def eligible(job):
-    title = job['title'].lower()
-    location = job['location'].lower()
-    return any(term in title for term in KEYWORDS) and any(term in location for term in PLACES)
+def add(jobs, *, source, identity, title, company, location, description, url, posted):
+    if not url or not title:
+        return
+    jobs.append({'id': f'{source}:{identity}', 'title': clean(title),
+                 'company': clean(company), 'location': clean(location),
+                 'description': clean(description)[:1200], 'url': str(url),
+                 'date': date(posted), 'source': source})
 
 
 def main():
-    jobs = []
-    errors = []
+    jobs, errors, sources = [], [], []
     try:
-        data = fetch('https://www.arbeitnow.com/api/job-board-api')
-        for item in data.get('data', []):
-            jobs.append({
-                'id': 'arbeitnow:' + str(item.get('slug')),
-                'title': item.get('title') or '',
-                'company': item.get('company_name') or '',
-                'location': item.get('location') or '',
-                'description': strip(item.get('description'))[:900],
-                'url': item.get('url') or '',
-                'date': datetime.datetime.fromtimestamp(item.get('created_at') or NOW.timestamp(), datetime.timezone.utc).date().isoformat(),
-                'source': 'Arbeitnow',
-            })
+        # Arbeitnow pages are not guaranteed to be exhaustive; 1–4 improve coverage.
+        for page in range(1, 5):
+            data = fetch(f'https://www.arbeitnow.com/api/job-board-api?page={page}')
+            items = data.get('data') or []
+            if not items:
+                break
+            for item in items:
+                add(jobs, source='Arbeitnow', identity=item.get('slug'), title=item.get('title'),
+                    company=item.get('company_name'), location=item.get('location'),
+                    description=item.get('description'), url=item.get('url'), posted=item.get('created_at'))
+        sources.append('Arbeitnow')
     except Exception as exc:
         errors.append('Arbeitnow: ' + str(exc))
 
     try:
         data = fetch('https://remotive.com/api/remote-jobs?limit=1000')
         for item in data.get('jobs', []):
-            jobs.append({
-                'id': 'remotive:' + str(item.get('id')),
-                'title': item.get('title') or '',
-                'company': item.get('company_name') or '',
-                'location': 'Remote · ' + (item.get('candidate_required_location') or 'Worldwide'),
-                'description': strip(item.get('description'))[:900],
-                'url': item.get('url') or '',
-                'date': (item.get('publication_date') or '')[:10],
-                'source': 'Remotive',
-            })
+            add(jobs, source='Remotive', identity=item.get('id'), title=item.get('title'),
+                company=item.get('company_name'),
+                location='Remote · ' + (item.get('candidate_required_location') or 'Worldwide'),
+                description=item.get('description'), url=item.get('url'),
+                posted=item.get('publication_date'))
+        sources.append('Remotive')
     except Exception as exc:
         errors.append('Remotive: ' + str(exc))
 
+    # Configurable employer boards. A token is an exact ATS board identifier;
+    # invalid/nonexistent boards are skipped, not reported as live sources.
+    config = ROOT / 'boards.json'
+    boards = json.loads(config.read_text(encoding='utf-8')) if config.exists() else {}
+    for board in boards.get('greenhouse', []):
+        company, token = board['company'], board['token']
+        try:
+            data = fetch(f'https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true')
+            items = data.get('jobs', [])
+            for item in items:
+                add(jobs, source='Greenhouse · ' + company, identity=item.get('id'),
+                    title=item.get('title'), company=company,
+                    location=(item.get('location') or {}).get('name', ''),
+                    description=item.get('content'), url=item.get('absolute_url'),
+                    posted=item.get('first_published') or item.get('updated_at'))
+            sources.append('Greenhouse · ' + company)
+        except urllib.error.HTTPError as exc:
+            if exc.code != 404:
+                errors.append(f'Greenhouse {company}: HTTP {exc.code}')
+        except Exception as exc:
+            errors.append(f'Greenhouse {company}: {exc}')
+
+    for board in boards.get('lever', []):
+        company, token = board['company'], board['token']
+        try:
+            items = fetch(f'https://api.lever.co/v0/postings/{token}?mode=json')
+            for item in items:
+                add(jobs, source='Lever · ' + company, identity=item.get('id'),
+                    title=item.get('text'), company=company,
+                    location=(item.get('categories') or {}).get('location', ''),
+                    description=item.get('descriptionPlain') or item.get('description'),
+                    url=item.get('hostedUrl') or item.get('applyUrl'),
+                    posted=item.get('createdAt'))
+            sources.append('Lever · ' + company)
+        except urllib.error.HTTPError as exc:
+            if exc.code != 404:
+                errors.append(f'Lever {company}: HTTP {exc.code}')
+        except Exception as exc:
+            errors.append(f'Lever {company}: {exc}')
+
     unique = {}
     for job in jobs:
-        if eligible(job) and job['url']:
-            job['score'] = score(job)
-            description = job['description']
-            job['summary'] = (description[:250].rsplit(' ', 1)[0] + '…') if len(description) > 250 else description
-            job.pop('description', None)
-            unique[job['id']] = job
+        if not relevant(job):
+            continue
+        job['score'] = rating(job)
+        description = job.pop('description')
+        job['summary'] = (description[:247].rsplit(' ', 1)[0] + '…') if len(description) > 250 else description
+        # Deduplicate across job sources by normalized job URL.
+        key = re.sub(r'[?#].*', '', job['url']).rstrip('/').lower()
+        unique[key] = job
 
-    output = {
-        'updated_at': NOW.isoformat(),
-        'jobs': sorted(unique.values(), key=lambda job: (job['date'], job['score']), reverse=True)[:250],
-        'sources': ['Arbeitnow', 'Remotive'],
-        'errors': errors,
-        'note': 'Betyg är heuristiska och preliminära; annonser och tillgänglighet måste kontrolleras hos arbetsgivaren.',
-    }
-    target = ROOT / 'data' / 'jobs.json'
-    target.parent.mkdir(parents=True, exist_ok=True)
-    if errors and not jobs and target.exists():
-        print('All feeds failed; preserving last successful data:', errors)
+    # Keep previously found jobs temporarily when feeds are temporarily unavailable.
+    if TARGET.exists():
+        try:
+            previous = json.loads(TARGET.read_text(encoding='utf-8')).get('jobs', [])
+            cutoff = (NOW.date() - dt.timedelta(days=21)).isoformat()
+            for job in previous:
+                if job.get('date', '') >= cutoff and job.get('url'):
+                    key = re.sub(r'[?#].*', '', job['url']).rstrip('/').lower()
+                    unique.setdefault(key, job)
+        except (ValueError, OSError):
+            pass
+
+    output = {'updated_at': NOW.isoformat(),
+              'jobs': sorted(unique.values(), key=lambda j: (j['date'], j['score']), reverse=True)[:500],
+              'sources': sources, 'errors': errors,
+              'note': 'Betyg är regelbaserade uppskattningar. Äldre träffar kan vara stängda; kontrollera hos arbetsgivaren.'}
+    TARGET.parent.mkdir(parents=True, exist_ok=True)
+    if not sources and TARGET.exists():
+        print('No sources succeeded; preserving previous data:', errors)
         return
-    target.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print('Saved', len(output['jobs']), 'jobs', errors)
+    TARGET.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print('Saved', len(output['jobs']), 'jobs from', sources, '; errors:', errors)
 
 
 if __name__ == '__main__':
