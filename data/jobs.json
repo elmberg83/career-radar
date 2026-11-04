@@ -1,6 +1,17 @@
 {
-  "updated_at": "2026-11-04T04:42:19.515256+00:00",
+  "updated_at": "2026-11-04T05:45:01.762995+00:00",
   "jobs": [
+    {
+      "id": "Arbeitnow:senior-customer-success-manager-dach-munich-293042",
+      "title": "Senior Customer Success Manager - DACH",
+      "company": "Constructor",
+      "location": "Remote - Germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/constructor/senior-customer-success-manager-dach-munich-293042",
+      "date": "2026-11-04",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "About You You're a jack-of-all-trades with a passion for cool technology and interacting with people and making them happy. You're a self-starter who's good at triaging problems and working on the most important one. You've worked directly with…"
+    },
     {
       "id": "Arbeitnow:senior-customer-success-managerin-50-100-remote-freelance-zurich-34880",
       "title": "Senior Customer Success Manager*in (50-100%) Remote / Freelance",
@@ -13,17 +24,6 @@
       "summary": "Imnoo ist ein Hightech-AI-Softwareunternehmen mit einer klaren Mission: Wir automatisieren und revolutionieren Kalkulations- und Angebotsprozesse in der Fertigungsindustrie . Mit Pioniergeist, modernster KI-Technologie und tiefem…"
     },
     {
-      "id": "Arbeitnow:customer-success-manager-london-57795",
-      "title": "Customer Success Manager",
-      "company": "Griffin",
-      "location": "London or remote within the UK",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/griffin/customer-success-manager-london-57795",
-      "date": "2026-11-03",
-      "source": "Arbeitnow",
-      "score": 7.1,
-      "summary": "About Griffin Hi, we’re Griffin. We’re a fully regulated UK bank that powers the accounts and payments offerings of product-led fintechs and platforms like Uber, Yonder, Prosper, and Sidekick. By doing the heavy lifting behind the scenes, our…"
-    },
-    {
       "id": "Arbeitnow:remote-customer-success-onboarding-specialist-germany-178951",
       "title": "Customer Success Onboarding Specialist (m/w/d) - Germany",
       "company": "Pennylane De",
@@ -33,6 +33,17 @@
       "source": "Arbeitnow",
       "score": 7.1,
       "summary": "Möchtest du das tägliche Leben von Millionen von Unternehmern in Deutschland (und bald in Europa) beeinflussen? Suchst du nach einem Arbeitsumfeld, das Vertrauen, Proaktivität und Autonomie schätzt? Stimmen unsere Company Values mit deiner Vision…"
+    },
+    {
+      "id": "Arbeitnow:customer-success-manager-london-57795",
+      "title": "Customer Success Manager",
+      "company": "Griffin",
+      "location": "London or remote within the UK",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/griffin/customer-success-manager-london-57795",
+      "date": "2026-11-03",
+      "source": "Arbeitnow",
+      "score": 7.1,
+      "summary": "About Griffin Hi, we’re Griffin. We’re a fully regulated UK bank that powers the accounts and payments offerings of product-led fintechs and platforms like Uber, Yonder, Prosper, and Sidekick. By doing the heavy lifting behind the scenes, our…"
     },
     {
       "id": "Arbeitnow:enterprise-customer-success-france-445720",
