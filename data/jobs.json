@@ -1,6 +1,39 @@
 {
-  "updated_at": "2026-11-05T00:37:35.634272+00:00",
+  "updated_at": "2026-11-05T01:56:36.530124+00:00",
   "jobs": [
+    {
+      "id": "Arbeitnow:customer-success-team-lead-german-speaking-berlin-27276",
+      "title": "Customer Success Team Lead (German-speaking)",
+      "company": "Secfix",
+      "location": "Remote - Germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/secfix/customer-success-team-lead-german-speaking-berlin-27276",
+      "date": "2026-11-05",
+      "source": "Arbeitnow",
+      "score": 7.1,
+      "summary": "Remote within EU time zones · Fluent German and English required At Secfix, we're at the forefront of automating security compliance in Europe. We help companies get and stay ISO 27001, GDPR, TISAX, and SOC 2 fast and easy and reduce hundreds of…"
+    },
+    {
+      "id": "Arbeitnow:account-manager-key-account-manager-berlin-49830",
+      "title": "Account Manager / Key Account Manager (m/w/d)",
+      "company": "Cosuno",
+      "location": "Berlin/Remote",
+      "url": "https://www.arbeitnow.com/jobs/companies/cosuno/account-manager-key-account-manager-berlin-49830",
+      "date": "2026-11-05",
+      "source": "Arbeitnow",
+      "score": 7.1,
+      "summary": "Die Baubranche ist eine 14-Billionen-Euro-Industrie, die noch immer auf E-Mails, Excel-Tabellen und eingescannten PDFs läuft. Cosuno ersetzt das durch KI. Generalunternehmer schreiben ihre Projekte auf unserer Plattform an mehr als 250.000…"
+    },
+    {
+      "id": "Arbeitnow:remote-senior-customer-success-manager-dach-north-195244",
+      "title": "Senior Customer Success Manager - DACH & North",
+      "company": "Amplitude",
+      "location": "Remote-Germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/amplitude/remote-senior-customer-success-manager-dach-north-195244",
+      "date": "2026-11-05",
+      "source": "Arbeitnow",
+      "score": 7.1,
+      "summary": "Amplitude is the leading AI analytics platform, helping over 5,200 customers—including Atlassian, Burger King, NBCUniversal, and Square—build better products and digital experiences. With powerful AI Agents embedded across our platform, teams can…"
+    },
     {
       "id": "Arbeitnow:senior-customer-success-manager-dach-munich-293042",
       "title": "Senior Customer Success Manager - DACH",
