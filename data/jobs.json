@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T07:47:24.564747+00:00",
+  "updated_at": "2026-11-07T08:39:20.494833+00:00",
   "jobs": [
     {
       "id": "Arbeitnow:remote-strategic-account-executive-germany-194498",
@@ -35,6 +35,28 @@
       "summary": "Saviynt's AI-powered identity platform manages and governs human and non-human access to all of an organization's applications, data, and business processes. Customers trust Saviynt to safeguard their digital assets, drive operational efficiency,…"
     },
     {
+      "id": "Arbeitnow:remote-enterprise-account-executive-ii-uae-487206",
+      "title": "Enterprise Account Executive II - UAE",
+      "company": "Camunda",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.com/jobs/companies/camunda/remote-enterprise-account-executive-ii-uae-487206",
+      "date": "2026-11-07",
+      "source": "Arbeitnow",
+      "score": 6.0,
+      "summary": "Camunda is the enterprise platform for agentic orchestration , enabling organizations to coordinate AI agents, people, and systems across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda…"
+    },
+    {
+      "id": "Arbeitnow:remote-enterprise-account-executive-iii-nordic-62254",
+      "title": "Enterprise Account Executive III - Nordic",
+      "company": "Camunda",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.com/jobs/companies/camunda/remote-enterprise-account-executive-iii-nordic-62254",
+      "date": "2026-11-07",
+      "source": "Arbeitnow",
+      "score": 6.0,
+      "summary": "Camunda is the enterprise platform for agentic orchestration , enabling organizations to coordinate AI agents, people, and systems across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda…"
+    },
+    {
       "id": "Arbeitnow:remote-enterprise-account-executive-dach-273986",
       "title": "Enterprise Account Executive, DACH",
       "company": "Sanity",
@@ -44,6 +66,17 @@
       "source": "Arbeitnow",
       "score": 6.0,
       "summary": "At Sanity.io , we’re building the future of AI-powered Content Operations. Our AI Content Operating System gives teams the freedom to model, create, and automate content the way their business works, accelerating digital development and…"
+    },
+    {
+      "id": "Arbeitnow:commercial-account-manager-manchester-396249",
+      "title": "Commercial Account Manager",
+      "company": "Influxdata",
+      "location": "Remote UK",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/influxdata/commercial-account-manager-manchester-396249",
+      "date": "2026-11-07",
+      "source": "Arbeitnow",
+      "score": 6.0,
+      "summary": "InfluxData is the creator of InfluxDB, the leading time series platform used to collect, store, and analyze all time series data at any scale. Developers can query and analyze their time-stamped data in real-time to discover, interpret, and share…"
     },
     {
       "id": "Arbeitnow:remote-partnerships-manager-south-east-91110",
