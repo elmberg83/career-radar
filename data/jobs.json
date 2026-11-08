@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T16:25:19.869253+00:00",
+  "updated_at": "2026-11-08T17:23:42.992317+00:00",
   "jobs": [
     {
       "id": "Arbeitnow:remote-strategic-account-executive-germany-194498",
@@ -46,17 +46,6 @@
       "summary": "Saviynt's AI-powered identity platform manages and governs human and non-human access to all of an organization's applications, data, and business processes. Customers trust Saviynt to safeguard their digital assets, drive operational efficiency,…"
     },
     {
-      "id": "Arbeitnow:remote-enterprise-account-executive-dach-273986",
-      "title": "Enterprise Account Executive, DACH",
-      "company": "Sanity",
-      "location": "Remote in Germany",
-      "url": "https://www.arbeitnow.com/jobs/companies/sanity/remote-enterprise-account-executive-dach-273986",
-      "date": "2026-11-07",
-      "source": "Arbeitnow",
-      "score": 6.0,
-      "summary": "At Sanity.io , we’re building the future of AI-powered Content Operations. Our AI Content Operating System gives teams the freedom to model, create, and automate content the way their business works, accelerating digital development and…"
-    },
-    {
       "id": "Arbeitnow:remote-enterprise-account-executive-ii-uae-487206",
       "title": "Enterprise Account Executive II - UAE",
       "company": "Camunda",
@@ -77,6 +66,17 @@
       "source": "Arbeitnow",
       "score": 6.0,
       "summary": "Camunda is the enterprise platform for agentic orchestration , enabling organizations to coordinate AI agents, people, and systems across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda…"
+    },
+    {
+      "id": "Arbeitnow:remote-enterprise-account-executive-dach-273986",
+      "title": "Enterprise Account Executive, DACH",
+      "company": "Sanity",
+      "location": "Remote in Germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/sanity/remote-enterprise-account-executive-dach-273986",
+      "date": "2026-11-07",
+      "source": "Arbeitnow",
+      "score": 6.0,
+      "summary": "At Sanity.io , we’re building the future of AI-powered Content Operations. Our AI Content Operating System gives teams the freedom to model, create, and automate content the way their business works, accelerating digital development and…"
     },
     {
       "id": "Arbeitnow:commercial-account-manager-manchester-396249",
