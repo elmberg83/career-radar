@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T06:52:41.566775+00:00",
+  "updated_at": "2026-11-13T08:08:46.532233+00:00",
   "jobs": [
     {
       "id": "Arbeitnow:customer-success-manager-uk-birmingham-331475",
@@ -46,17 +46,6 @@
       "summary": "Help shape the future of healthcare with data At LOGEX, we're on a mission to improve healthcare through data-driven insights. Every day, hospitals and healthcare organizations across Europe use our solutions to increase efficiency, improve…"
     },
     {
-      "id": "Arbeitnow:strategic-account-executive-munich-15793",
-      "title": "Strategic Account Executive",
-      "company": "Zip",
-      "location": "Remote - Germany",
-      "url": "https://www.arbeitnow.com/jobs/companies/zip/strategic-account-executive-munich-15793",
-      "date": "2026-11-11",
-      "source": "Arbeitnow",
-      "score": 7.1,
-      "summary": "About Zip Zip is the AI platform for enterprise procurement — built for humans and agents working together. By orchestrating procurement across teams, tools, and suppliers with the help of AI agents, companies can secure the resources they need…"
-    },
-    {
       "id": "Greenhouse · Trustpilot:8249729",
       "title": "Senior Enterprise Account Executive - Spain",
       "company": "Trustpilot",
@@ -66,6 +55,17 @@
       "source": "Greenhouse · Trustpilot",
       "score": 7.1,
       "summary": "<div class=\"content-intro\"><p>At Trustpilot, we're on an incredible journey. We're a profitable, high-growth FTSE-250 company with a big vision: to become the universal symbol of trust. We run the world's largest open customer review platform,…"
+    },
+    {
+      "id": "Arbeitnow:strategic-account-executive-munich-15793",
+      "title": "Strategic Account Executive",
+      "company": "Zip",
+      "location": "Remote - Germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/zip/strategic-account-executive-munich-15793",
+      "date": "2026-11-11",
+      "source": "Arbeitnow",
+      "score": 7.1,
+      "summary": "About Zip Zip is the AI platform for enterprise procurement — built for humans and agents working together. By orchestrating procurement across teams, tools, and suppliers with the help of AI agents, companies can secure the resources they need…"
     },
     {
       "id": "Arbeitnow:sales-manager-account-executives-french-speaking-100-remote-europe-london-485462",
