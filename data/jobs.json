@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-11-16T18:42:47.600948+00:00",
+  "updated_at": "2026-11-16T19:46:37.627790+00:00",
   "jobs": [
-    {
-      "id": "Arbeitnow:remote-customer-success-architect-france-248760",
-      "title": "Customer Success Architect, France",
-      "company": "gitlab",
-      "location": "Remote",
-      "url": "https://www.arbeitnow.fr/jobs/companies/gitlab/remote-customer-success-architect-france-248760",
-      "date": "2026-11-16",
-      "source": "Arbeitnow",
-      "score": 7.9,
-      "summary": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate…"
-    },
     {
       "id": "Arbeitnow:remote-customer-success-architect-neur-53586",
       "title": "Customer Success Architect, NEUR",
       "company": "gitlab",
       "location": "Remote",
       "url": "https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-customer-success-architect-neur-53586",
+      "date": "2026-11-16",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate…"
+    },
+    {
+      "id": "Arbeitnow:remote-customer-success-architect-france-248760",
+      "title": "Customer Success Architect, France",
+      "company": "gitlab",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.fr/jobs/companies/gitlab/remote-customer-success-architect-france-248760",
       "date": "2026-11-16",
       "source": "Arbeitnow",
       "score": 7.9,
