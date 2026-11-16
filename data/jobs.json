@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T11:55:51.925346+00:00",
+  "updated_at": "2026-11-16T14:45:40.588096+00:00",
   "jobs": [
     {
       "id": "Arbeitnow:remote-customer-success-architect-neur-53586",
@@ -22,6 +22,17 @@
       "source": "Arbeitnow",
       "score": 7.9,
       "summary": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate…"
+    },
+    {
+      "id": "Arbeitnow:account-director-public-sector-dach-emea-327280",
+      "title": "Account Director, Public Sector (DACH)",
+      "company": "TRM Labs",
+      "location": "EMEA",
+      "url": "https://www.arbeitnow.com/jobs/companies/trm-labs/account-director-public-sector-dach-emea-327280",
+      "date": "2026-11-16",
+      "source": "Arbeitnow",
+      "score": 7.1,
+      "summary": "Build a Safer World. TRM Labs provides AI-powered intelligence solutions that help public and private sector agencies investigate and disrupt crime. TRM's platforms enable investigators to trace illicit activity, build cases, and construct…"
     },
     {
       "id": "Arbeitnow:remote-associate-director-partnerships-413449",
