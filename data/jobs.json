@@ -1,6 +1,17 @@
 {
-  "updated_at": "2026-11-17T10:50:33.960249+00:00",
+  "updated_at": "2026-11-17T11:38:45.382174+00:00",
   "jobs": [
+    {
+      "id": "Arbeitnow:remote-talent-pool-sales-manager-113505",
+      "title": "Talent Pool: Sales Manager (m/f/d)",
+      "company": "Roompricegenie",
+      "location": "Remote Germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/roompricegenie/remote-talent-pool-sales-manager-113505",
+      "date": "2026-11-17",
+      "source": "Arbeitnow",
+      "score": 6.0,
+      "summary": "About RoomPriceGenie ✨🧞‍♂️ Founded in 2017, RoomPriceGenie is dedicated to helping hoteliers around the globe achieve optimal pricing. 🌍 We understand that many small hotels face challenges with digitalization, making their operations…"
+    },
     {
       "id": "Arbeitnow:remote-customer-success-architect-france-248760",
       "title": "Customer Success Architect, France",
@@ -591,7 +602,7 @@
     "Greenhouse · Trustpilot"
   ],
   "errors": [
-    "Lever Unity: HTTP 500"
+    "Lever Unity: HTTP 504"
   ],
   "note": "Betyg är regelbaserade uppskattningar. Äldre träffar kan vara stängda; kontrollera hos arbetsgivaren."
 }
