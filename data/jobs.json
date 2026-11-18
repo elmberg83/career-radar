@@ -1,6 +1,50 @@
 {
-  "updated_at": "2026-11-18T00:46:43.244003+00:00",
+  "updated_at": "2026-11-18T02:06:19.557533+00:00",
   "jobs": [
+    {
+      "id": "Arbeitnow:remote-cloud-native-architect-strategic-accounts-emea-398967",
+      "title": "Cloud Native Architect, Strategic Accounts (EMEA)",
+      "company": "purestorage",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.com/jobs/companies/purestorage/remote-cloud-native-architect-strategic-accounts-emea-398967",
+      "date": "2026-11-18",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quarter, and accelerating growth into FY27. Our strategic agenda spans…"
+    },
+    {
+      "id": "Arbeitnow:remote-cloud-native-architect-strategic-accounts-emea-347131",
+      "title": "Cloud Native Architect, Strategic Accounts (EMEA)",
+      "company": "purestorage",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/purestorage/remote-cloud-native-architect-strategic-accounts-emea-347131",
+      "date": "2026-11-18",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quarter, and accelerating growth into FY27. Our strategic agenda spans…"
+    },
+    {
+      "id": "Arbeitnow:remote-cloud-native-architect-strategic-accounts-emea-418277",
+      "title": "Cloud Native Architect, Strategic Accounts (EMEA)",
+      "company": "purestorage",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.fr/jobs/companies/purestorage/remote-cloud-native-architect-strategic-accounts-emea-418277",
+      "date": "2026-11-18",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quarter, and accelerating growth into FY27. Our strategic agenda spans…"
+    },
+    {
+      "id": "Arbeitnow:remote-cloud-native-architect-strategic-accounts-emea-33240",
+      "title": "Cloud Native Architect, Strategic Accounts (EMEA)",
+      "company": "purestorage",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.nl/jobs/companies/purestorage/remote-cloud-native-architect-strategic-accounts-emea-33240",
+      "date": "2026-11-18",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "<div class=\"content-intro\"><p>Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quarter, and accelerating growth into FY27. Our strategic agenda spans…"
+    },
     {
       "id": "Arbeitnow:remote-customer-success-manager-key-440393",
       "title": "Customer Success Manager - Key",
@@ -13,17 +57,6 @@
       "summary": "About SugarAI SugarAI is redefining CRM for the age of AI. We’re delivering on the original promise of CRM—turning fragmented customer and revenue signals into clear, prioritized action. Instead of more dashboards or surface-level insights, we…"
     },
     {
-      "id": "Arbeitnow:remote-customer-success-manager-bretagne-146851",
-      "title": "Customer Success Manager",
-      "company": "Instagrid",
-      "location": "Remote job",
-      "url": "https://www.arbeitnow.fr/jobs/companies/instagrid/remote-customer-success-manager-bretagne-146851",
-      "date": "2026-11-17",
-      "source": "Arbeitnow",
-      "score": 7.9,
-      "summary": "Pure instant power. Anywhere. We have created the world’s most advanced portable power supplies, bringing freedom to the way our customers work. With you we want to shape a world where advanced technology meets environmental responsibility and…"
-    },
-    {
       "id": "Arbeitnow:remote-strategic-account-executive-manufacturing-206696",
       "title": "Strategic Account Executive - Manufacturing",
       "company": "celonis",
@@ -33,6 +66,17 @@
       "source": "Arbeitnow",
       "score": 7.9,
       "summary": "<div class=\"content-intro\"><p>Celonis is the trusted platform to industrialize Enterprise AI. At our core is the Celonis Context Model — which combines process data, business knowledge, and intelligence into a living digital twin of the…"
+    },
+    {
+      "id": "Arbeitnow:remote-customer-success-manager-bretagne-146851",
+      "title": "Customer Success Manager",
+      "company": "Instagrid",
+      "location": "Remote job",
+      "url": "https://www.arbeitnow.fr/jobs/companies/instagrid/remote-customer-success-manager-bretagne-146851",
+      "date": "2026-11-17",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "Pure instant power. Anywhere. We have created the world’s most advanced portable power supplies, bringing freedom to the way our customers work. With you we want to shape a world where advanced technology meets environmental responsibility and…"
     },
     {
       "id": "Arbeitnow:remote-director-customer-success-strategy-operations-390998",
