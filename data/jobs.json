@@ -1,6 +1,17 @@
 {
-  "updated_at": "2026-11-19T18:46:47.021387+00:00",
+  "updated_at": "2026-11-19T19:53:09.508347+00:00",
   "jobs": [
+    {
+      "id": "Arbeitnow:remote-strategic-account-executive-france-309663",
+      "title": "Strategic Account Executive, France",
+      "company": "gitlab",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.fr/jobs/companies/gitlab/remote-strategic-account-executive-france-309663",
+      "date": "2026-11-19",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate…"
+    },
     {
       "id": "Arbeitnow:remote-customer-success-manager-h-f-bretagne-23143",
       "title": "Customer Success Manager (H/F)",
