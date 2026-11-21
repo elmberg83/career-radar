@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T01:59:26.795493+00:00",
+  "updated_at": "2026-11-21T02:45:45.253744+00:00",
   "jobs": [
     {
       "id": "Arbeitnow:regional-partnerships-manager-uk-london-446988",
@@ -134,17 +134,6 @@
       "summary": "Camunda is the enterprise platform for agentic orchestration , enabling organizations to coordinate AI agents, people, and systems across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda…"
     },
     {
-      "id": "Arbeitnow:remote-enterprise-account-executive-dach-295927",
-      "title": "Enterprise Account Executive, DACH",
-      "company": "Sanity",
-      "location": "Remote in the UK",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/sanity/remote-enterprise-account-executive-dach-295927",
-      "date": "2026-11-20",
-      "source": "Arbeitnow",
-      "score": 6.0,
-      "summary": "At Sanity.io , we’re building the future of AI-powered Content Operations. Our AI Content Operating System gives teams the freedom to model, create, and automate content the way their business works, accelerating digital development and…"
-    },
-    {
       "id": "Arbeitnow:inside-sales-manager-berlin-337156",
       "title": "Inside Sales Manager",
       "company": "Cosuno",
@@ -165,6 +154,17 @@
       "source": "Arbeitnow",
       "score": 6.0,
       "summary": "About Abacum Abacum is the leading Business Planning solution for finance teams to drive performance . By automating reporting, enabling collaboration, and simplifying planning and forecasting, we help finance teams shift from number crunching to…"
+    },
+    {
+      "id": "Arbeitnow:remote-enterprise-account-executive-dach-295927",
+      "title": "Enterprise Account Executive, DACH",
+      "company": "Sanity",
+      "location": "Remote in the UK",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/sanity/remote-enterprise-account-executive-dach-295927",
+      "date": "2026-11-20",
+      "source": "Arbeitnow",
+      "score": 6.0,
+      "summary": "At Sanity.io , we’re building the future of AI-powered Content Operations. Our AI Content Operating System gives teams the freedom to model, create, and automate content the way their business works, accelerating digital development and…"
     },
     {
       "id": "Arbeitnow:remote-strategic-account-executive-france-309663",
