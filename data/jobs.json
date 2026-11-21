@@ -1,6 +1,17 @@
 {
-  "updated_at": "2026-11-21T18:29:51.680865+00:00",
+  "updated_at": "2026-11-21T19:37:49.700037+00:00",
   "jobs": [
+    {
+      "id": "Arbeitnow:remote-strategic-account-executive-494000",
+      "title": "Strategic Account Executive",
+      "company": "gitlab",
+      "location": "Remote",
+      "url": "https://www.arbeitnow.com/jobs/companies/gitlab/remote-strategic-account-executive-494000",
+      "date": "2026-11-21",
+      "source": "Arbeitnow",
+      "score": 7.9,
+      "summary": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate…"
+    },
     {
       "id": "Arbeitnow:regional-partnerships-manager-uk-london-446988",
       "title": "Regional Partnerships Manager - UK",
