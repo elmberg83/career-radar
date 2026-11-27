@@ -1,6 +1,17 @@
 {
-  "updated_at": "2026-11-27T18:41:58.504725+00:00",
+  "updated_at": "2026-11-27T19:48:35.477078+00:00",
   "jobs": [
+    {
+      "id": "Arbeitnow:remote-werkstudent-business-development-a-214099",
+      "title": "Werkstudent Business Development (a)",
+      "company": "Oviva",
+      "location": "Remote Germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/oviva/remote-werkstudent-business-development-a-214099",
+      "date": "2026-11-27",
+      "source": "Arbeitnow",
+      "score": 6.7,
+      "summary": "Warum Oviva? Unsere Mission ist es, Menschen mit gewichtsbedingten Erkrankungen die bestmögliche Unterstützung für ein gesünderes Leben zu bieten. Mit unserer innovativen Kombination aus Verhaltensänderungstherapie und digitalen Tools setzen wir…"
+    },
     {
       "id": "Arbeitnow:remote-senior-consultant-sap-customer-engagement-crm-utilities-berlin-492857",
       "title": "Senior Consultant SAP Customer Engagement / CRM Utilities (m/w/d)",
